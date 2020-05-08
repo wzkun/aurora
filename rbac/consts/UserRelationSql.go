@@ -1,7 +1,7 @@
 package consts
 
 const (
-	QueryRoleBrief = `
+	QueryRoleBriefByUser = `
 		select a.roleid as id, b.name as name 
 		from rbac_server_userrolerelation a 
 		left join rbac_server_role b 
@@ -9,7 +9,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryRoleDetail = `
+	QueryRoleDetailByUser = `
 		select b.* 
 		from rbac_server_userrolerelation a 
 		left join rbac_server_role b 
@@ -17,7 +17,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryOrganizationBrief = `
+	QueryOrganizationBriefByUser = `
 		select a.orgid as id, b.name ad name 
 		from rbac_server_userorganizationrelation a 
 		left join rbac_server_organization b 
@@ -25,7 +25,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryOrganizationDetail = `
+	QueryOrganizationDetailByUser = `
 		select b.* 
 		from rbac_server_userorganizationrelation a 
 		left join rbac_server_organization b 
@@ -33,7 +33,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryMenuBrief = `
+	QueryMenuBriefByUser = `
 		select a.menuid as id, b.name ad name 
 		from rbac_server_usermenurelation a 
 		left join rbac_server_menu b 
@@ -41,7 +41,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryMenuDetail = `
+	QueryMenuDetailByUser = `
 		select b.* 
 		from rbac_server_usermenurelation a 
 		left join rbac_server_menu b 
@@ -49,7 +49,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryGroupBrief = `
+	QueryGroupBriefByUser = `
 		select a.groupid as id, b.name ad name 
 		from rbac_server_usergrouprelation a 
 		left join rbac_server_group b 
@@ -57,7 +57,7 @@ const (
 		where a.account = %s 
 	`
 
-	QueryGroupDetail = `
+	QueryGroupDetailByUser = `
 		select b.* 
 		from rbac_server_usergrouprelation a 
 		left join rbac_server_group b 
@@ -65,20 +65,19 @@ const (
 		where a.account = %s 
 	`
 
-	QueryFunctionBrief = `
+	QueryFunctionBriefByUser = `
 		select a.funcid as id, b.name ad name 
 		from rbac_server_userfunctionrelation a 
 		left join rbac_server_function b 
 		on a.funcid = b.id 
 		where a.account = %s 
 	`
-	
-	QueryFunctionDetail = `
+
+	QueryFunctionDetailByUser = `
 	select b.* 
 	from rbac_server_userfunctionrelation a 
 	left join rbac_server_function b 
 	on a.funcid = b.id 
 	where a.account = %s 
 `
-
 )
