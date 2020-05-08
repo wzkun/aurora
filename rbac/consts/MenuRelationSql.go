@@ -18,19 +18,19 @@ const(
 	`
 
 	QueryRoleDetailByMenu=`
-	select b.*
-	from rbac_server_rolemenurelation a
-	left join rbac_server_role b 
-	on a.roleid = b.id
-	where a.menuid = %s
-`
+		select b.*
+		from rbac_server_rolemenurelation a
+		left join rbac_server_role b 
+		on a.roleid = b.id
+		where a.menuid = %s
+	`
 
-QueryFunctionDetailByMenu=`
-	select b.*
-	from rbac_server_menufunctionrelation a
-	left join rbac_server_function b 
-	on a.funcid = b.id
-	where a.menuid = %s
-`
+	QueryFunctionDetailByMenu=`
+		select b.*
+		from rbac_server_menufunctionrelation a
+		left join rbac_server_function b 
+		on a.funcid = b.id
+		where a.menuid = %s
+	`
 
 )

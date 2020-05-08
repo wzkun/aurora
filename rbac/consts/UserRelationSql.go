@@ -74,10 +74,10 @@ const (
 	`
 
 	QueryFunctionDetailByUser = `
-	select b.* 
-	from rbac_server_userfunctionrelation a 
-	left join rbac_server_function b 
-	on a.funcid = b.id 
-	where a.account = %s 
-`
+		select b.* 
+		from rbac_server_userfunctionrelation a 
+		left join rbac_server_function b 
+		on a.funcid = b.id 
+		where a.account = %s 
+	`
 )
