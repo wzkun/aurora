@@ -1,4 +1,4 @@
-packages consts
+package consts
 
 const(
 	// 查询用户组下的人员列表

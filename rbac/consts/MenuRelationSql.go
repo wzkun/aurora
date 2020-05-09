@@ -1,4 +1,4 @@
-packages consts
+package consts
 
 const(
 	QueryUserDetailByMenu=`
