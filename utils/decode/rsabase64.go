@@ -129,6 +129,20 @@ func GetPubKey(filename string) (*rsa.PublicKey, error) {
 	return pub, nil
 }
 
+// GetPubKeyString function.
+func GetPubKeyString(filename string) (string, error) {
+	PubKey, err := ioutil.ReadFile(filename)
+	if err != nil {
+		os.Exit(-1)
+	}
+
+	if PubKey == nil {
+		return "", errors.New("input arguments error")
+	}
+
+	return string(PubKey), nil
+}
+
 // GetPriKey function.
 func GetPriKey(filename string) (*rsa.PrivateKey, error) {
 	PriKey, err := ioutil.ReadFile(filename)
