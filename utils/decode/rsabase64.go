@@ -13,13 +13,13 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// 编码
+// StdEncodeToString base64编码
 func StdEncodeToString(src []byte) string {
 	dst := base64.StdEncoding.EncodeToString(src)
 	return dst
 }
 
-// 解码
+// StdDecodeString base64解码
 func StdDecodeString(src string) ([]byte, error) {
 	decoded, err := base64.StdEncoding.DecodeString(src)
 	return decoded, err
@@ -34,7 +34,7 @@ func EncodeRSAs(pubkey *rsa.PublicKey, datas [][]byte) ([]string, error) {
 			return nil, err
 		}
 
-		encoded := base64.StdEncoding.EncodeToString(signature)
+		encoded := StdEncodeToString(signature)
 		resp = append(resp, encoded)
 	}
 
@@ -48,14 +48,51 @@ func EncodeRSA(pubkey *rsa.PublicKey, data []byte) (string, error) {
 		return "", err
 	}
 
-	encoded := base64.StdEncoding.EncodeToString(signature)
+	encoded := StdEncodeToString(signature)
+
+	return encoded, nil
+}
+
+// EncodeRSA RSA+BASE64 encode
+func EncodeRSAWithKeyFile(filename string, data []byte) (string, error) {
+	pubkey, err := GetPubKey(filename)
+	if err != nil {
+		return "", err
+	}
+
+	signature, err := rsa.EncryptPKCS1v15(rand.Reader, pubkey, data)
+	if err != nil {
+		return "", err
+	}
+
+	encoded := StdEncodeToString(signature)
 
 	return encoded, nil
 }
 
 // DecodeRSA  RSA+BASE64 decode
 func DecodeRSA(prikey *rsa.PrivateKey, data string) ([]byte, error) {
-	decoded, err := base64.StdEncoding.DecodeString(data)
+	decoded, err := StdDecodeString(data)
+	if err != nil {
+		return nil, err
+	}
+
+	dsignature, err := rsa.DecryptPKCS1v15(rand.Reader, prikey, []byte(decoded))
+	if err != nil {
+		return nil, err
+	}
+
+	return dsignature, nil
+}
+
+// DecodeRSA  RSA+BASE64 decode
+func DecodeRSAWithKeyFile(filename, data string) ([]byte, error) {
+	prikey, err := GetPriKey(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	decoded, err := StdDecodeString(data)
 	if err != nil {
 		return nil, err
 	}
