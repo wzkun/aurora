@@ -19,10 +19,10 @@ func StdDecodeString(src string) ([]byte, error) {
 }
 
 // EncodeRSAs RSA+BASE64 encode
-func EncodeRSAs(pubkey *rsa.PublicKey, datas ...interface{}) ([]string, error) {
+func EncodeRSAs(pubkey *rsa.PublicKey, datas [][]byte) ([]string, error) {
 	var resp []string
 	for _, data := range datas {
-		signature, err := rsa.EncryptPKCS1v15(rand.Reader, pubkey, data.([]byte))
+		signature, err := rsa.EncryptPKCS1v15(rand.Reader, pubkey, data)
 		if err != nil {
 			return nil, err
 		}
@@ -35,8 +35,8 @@ func EncodeRSAs(pubkey *rsa.PublicKey, datas ...interface{}) ([]string, error) {
 }
 
 // EncodeRSA RSA+BASE64 encode
-func EncodeRSA(pubkey *rsa.PublicKey, data interface{}) (string, error) {
-	signature, err := rsa.EncryptPKCS1v15(rand.Reader, pubkey, data.([]byte))
+func EncodeRSA(pubkey *rsa.PublicKey, data []byte) (string, error) {
+	signature, err := rsa.EncryptPKCS1v15(rand.Reader, pubkey, data)
 	if err != nil {
 		return "", err
 	}
@@ -47,8 +47,8 @@ func EncodeRSA(pubkey *rsa.PublicKey, data interface{}) (string, error) {
 }
 
 // DecodeRSA  RSA+BASE64 decode
-func DecodeRSA(prikey *rsa.PrivateKey, data interface{}) ([]byte, error) {
-	decoded, err := base64.StdEncoding.DecodeString(data.(string))
+func DecodeRSA(prikey *rsa.PrivateKey, data string) ([]byte, error) {
+	decoded, err := base64.StdEncoding.DecodeString(data)
 	if err != nil {
 		return nil, err
 	}
