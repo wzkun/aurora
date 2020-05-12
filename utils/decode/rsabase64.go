@@ -9,6 +9,8 @@ import (
 	"errors"
 	"io/ioutil"
 	"os"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 // 编码
@@ -170,4 +172,24 @@ func GetPriKeyLen(filename string) (int, error) {
 	}
 
 	return prikey.N.BitLen(), nil
+}
+
+// SaltedValue return salted hash value.
+func SaltedValue(value string) (string, error) {
+	salt, err := bcrypt.GenerateFromPassword([]byte(value), 10)
+	if err != nil {
+		return "", err
+	}
+
+	encodePW := string(salt)
+	return encodePW, nil
+}
+
+// Verfy function.
+func Verify(password, hpassword string) (bool, error) {
+	err := bcrypt.CompareHashAndPassword([]byte(password), []byte(hpassword))
+	if err != nil {
+		return false, err
+	}
+	return true, nil
 }
