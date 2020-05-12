@@ -152,3 +152,22 @@ func GenRsaKey(bits int) error {
 	}
 	return nil
 }
+
+//GetPubKeyLen 获取RSA公钥
+func GetPubKeyLen(filename string) (int, error) {
+	pub, err := GetPubKey(filename)
+	if err != nil {
+		return 0, err
+	}
+	return pub.N.BitLen(), nil
+}
+
+//GetPriKeyLen 获取RSA私钥长度
+func GetPriKeyLen(filename string) (int, error) {
+	prikey, err := GetPriKey(filename)
+	if err != nil {
+		return 0, err
+	}
+
+	return prikey.N.BitLen(), nil
+}
