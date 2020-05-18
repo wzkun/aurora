@@ -6,7 +6,7 @@ const (
 		from rbac_server_userrolerelation a 
 		left join rbac_server_role b 
 		on a.roleid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryRoleDetailByUser = `
@@ -14,7 +14,7 @@ const (
 		from rbac_server_userrolerelation a 
 		left join rbac_server_role b 
 		on a.roleid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryOrganizationBriefByUser = `
@@ -22,7 +22,7 @@ const (
 		from rbac_server_userorganizationrelation a 
 		left join rbac_server_organization b 
 		on a.orgid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryOrganizationDetailByUser = `
@@ -30,7 +30,7 @@ const (
 		from rbac_server_userorganizationrelation a 
 		left join rbac_server_organization b 
 		on a.orgid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryMenuBriefByUser = `
@@ -38,7 +38,7 @@ const (
 		from rbac_server_usermenurelation a 
 		left join rbac_server_menu b 
 		on a.menuid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryMenuDetailByUser = `
@@ -46,7 +46,7 @@ const (
 		from rbac_server_usermenurelation a 
 		left join rbac_server_menu b 
 		on a.menuid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryGroupBriefByUser = `
@@ -54,7 +54,7 @@ const (
 		from rbac_server_usergrouprelation a 
 		left join rbac_server_group b 
 		on a.groupid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryGroupDetailByUser = `
@@ -62,7 +62,7 @@ const (
 		from rbac_server_usergrouprelation a 
 		left join rbac_server_group b 
 		on a.groupid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryFunctionBriefByUser = `
@@ -70,7 +70,7 @@ const (
 		from rbac_server_userfunctionrelation a 
 		left join rbac_server_function b 
 		on a.funcid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 
 	QueryFunctionDetailByUser = `
@@ -78,6 +78,6 @@ const (
 		from rbac_server_userfunctionrelation a 
 		left join rbac_server_function b 
 		on a.funcid = b.id 
-		where a.account = %s 
+		where a.account = ? 
 	`
 )
