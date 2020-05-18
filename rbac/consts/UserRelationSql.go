@@ -18,7 +18,7 @@ const (
 	`
 
 	QueryOrganizationBriefByUser = `
-		select a.orgid as id, b.name ad name 
+		select a.orgid as id, b.name as name 
 		from rbac_server_userorganizationrelation a 
 		left join rbac_server_organization b 
 		on a.orgid = b.id 
@@ -34,7 +34,7 @@ const (
 	`
 
 	QueryMenuBriefByUser = `
-		select a.menuid as id, b.name ad name 
+		select a.menuid as id, b.name as name 
 		from rbac_server_usermenurelation a 
 		left join rbac_server_menu b 
 		on a.menuid = b.id 
@@ -50,7 +50,7 @@ const (
 	`
 
 	QueryGroupBriefByUser = `
-		select a.groupid as id, b.name ad name 
+		select a.groupid as id, b.name as name 
 		from rbac_server_usergrouprelation a 
 		left join rbac_server_group b 
 		on a.groupid = b.id 
@@ -66,7 +66,7 @@ const (
 	`
 
 	QueryFunctionBriefByUser = `
-		select a.funcid as id, b.name ad name 
+		select a.funcid as id, b.name as name 
 		from rbac_server_userfunctionrelation a 
 		left join rbac_server_function b 
 		on a.funcid = b.id 
