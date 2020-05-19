@@ -237,8 +237,8 @@ func SaltedValue(value string) (string, error) {
 }
 
 // Verfy function.
-func Verify(password, hpassword string) (bool, error) {
-	err := bcrypt.CompareHashAndPassword([]byte(password), []byte(hpassword))
+func Verify(hash, password string) (bool, error) {
+	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
 	if err != nil {
 		return false, err
 	}
