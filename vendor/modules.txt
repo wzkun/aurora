@@ -1,9 +1,0 @@
-# github.com/json-iterator/go v1.1.10
-github.com/json-iterator/go
-# github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-github.com/modern-go/concurrent
-# github.com/modern-go/reflect2 v1.0.1
-github.com/modern-go/reflect2
-# golang.org/x/crypto v0.0.0-20200604202706-70a84ac30bf9
-golang.org/x/crypto/bcrypt
-golang.org/x/crypto/blowfish
