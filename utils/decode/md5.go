@@ -12,3 +12,13 @@ func MD5(str string) string {
 	res := hex.EncodeToString(h.Sum(nil))
 	return res
 }
+
+// MultiToMD5String
+func MultiToMD5String(strs ...string) string {
+	key := ""
+	for _, str := range strs {
+		key = key + str
+	}
+
+	return MD5(key)
+}
