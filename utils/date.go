@@ -11,6 +11,7 @@ const (
 	DATE_DIR_PATTERN    = "2006/01/02"
 	YYYY_MM_DD_HH_MM_SS = "2006-01-02 15:04:05"
 	YYYYMMDDHHMMSS      = "20060102150405"
+	YYYYMMDD            = "20060102"
 )
 
 // FormatDateToString 将日期转换成指定格式的字符串
