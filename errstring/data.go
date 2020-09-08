@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	ItemNotExist = "aurora.record_not_exist.domain.app_error"
+	ItemNotExist = "record_not_exist.domain.app_error"
 )
 
 // MakeItemNotExistDetail
