@@ -3,7 +3,7 @@ module github.com/wzkun/aurora
 go 1.14
 
 require (
-	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200828095341-c5cc02478406
+	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200907080304-bc6b2a99df34
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/json-iterator/go v1.1.10
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -12,5 +12,5 @@ require (
 	github.com/sirupsen/logrus v1.6.0 // indirect
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
 	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208 // indirect
-	golang.org/x/sys v0.0.0-20200831180312-196b9ba8737a // indirect
+	golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f // indirect
 )

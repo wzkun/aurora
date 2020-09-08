@@ -3,6 +3,8 @@ code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200805031749-f52e74c01c2c h1:wvlv
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200805031749-f52e74c01c2c/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200828095341-c5cc02478406 h1:6SS708c2DVECeLuaCzZfrje1XOTekMRcI1B+m6R1vuY=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200828095341-c5cc02478406/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200907080304-bc6b2a99df34 h1:AMvbVDgrn136mU6qOjXZ7gv61NGaq6wVfk+SkrYzBaw=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200907080304-bc6b2a99df34/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/aws/aws-sdk-go v1.33.5/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/aws/aws-sdk-go v1.34.13/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
@@ -98,6 +100,8 @@ golang.org/x/sys v0.0.0-20200806060901-a37d78b92225 h1:a5kp7Ohh+lqGCGHUBQdPwGHTJ
 golang.org/x/sys v0.0.0-20200806060901-a37d78b92225/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200831180312-196b9ba8737a h1:i47hUS795cOydZI4AwJQCKXOr4BvxzvikwDoDtHhP2Y=
 golang.org/x/sys v0.0.0-20200831180312-196b9ba8737a/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f h1:Fqb3ao1hUmOR3GkUOg/Y+BadLwykBIzs5q8Ez2SbHyc=
+golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
 golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
