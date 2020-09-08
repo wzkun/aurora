@@ -3,6 +3,7 @@ module github.com/wzkun/aurora
 go 1.14
 
 require (
+	code.aliyun.com/bim_backend/zoogoer v0.0.0-20200812075521-c4f16747a85b
 	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200907080304-bc6b2a99df34
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/json-iterator/go v1.1.10
