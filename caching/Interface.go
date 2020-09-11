@@ -9,6 +9,7 @@ type Item interface {
 	Idx() string
 	ElasticIndex() string
 	MarshalToJson() ([]byte, error)
+	TableName() string
 }
 
 // ModelMarshalToElastic 序列化为ES对象
