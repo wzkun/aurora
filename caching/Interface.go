@@ -1,83 +1,57 @@
 package caching
 
-import (
-	"code.aliyun.com/new_backend/scodi_nqc/elastic"
-	"github.com/wzkun/aurora/utils/decode"
-)
+// Proxy
+type Proxy interface {
+	NewFromZinto(msg interface{}) Item
+	NewFromZintos(msg interface{}) []Item
+}
 
+// Key A generic value can store in the cache.
+type Key interface {
+	UID() string
+	TableName() string
+	Idx() string
+	Maker() Proxy
+}
+
+// Item
 type Item interface {
+	UID() string
 	Idx() string
 	ElasticIndex() string
 	MarshalToJson() ([]byte, error)
 	TableName() string
 }
 
-// ModelMarshalToElastic 序列化为ES对象
-func ModelMarshalToElastic(o Item) (elastic.ElasticItem, error) {
-	idx := o.Idx()
-	parrent := o.ElasticIndex()
+// Storage A generic key value storage interface.  The storage may be persistent
+// (e.g., a database) or volatile (e.g., cache).  All Storage implementations
+// must be thread safe.
+type Storage interface {
+	// This retrieves a single value from the storage.
+	Get(key Key) (Item, error)
 
-	body, err := o.MarshalToJson()
-	if err != nil {
-		return nil, err
-	}
-	return elastic.NewElasticItem2(idx, parrent, body)
-}
+	// This retrieves multiple values from the storage.  The items are returned
+	// in the same order as the input keys.
+	GetMulti(keys ...Key) ([]Item, error)
 
-// MultiMarshalToElastic 序列化为ES对象
-func MultiMarshalToElastic(os ...Item) ([]elastic.ElasticItem, error) {
-	rds := make([]elastic.ElasticItem, 0)
+	// This stores a single item into the storage.
+	// Generally, all "Set" function map to "Update" except "SetIfAbsent" for Create
+	SetIfAbsent(item Item) error
+	// This stores multiple items into the storage with key->value pair.
+	SetMultiIfAbsent(items ...Item) ([]Item, error)
 
-	for _, o := range os {
-		idx := o.Idx()
-		parrent := o.ElasticIndex()
+	// Generally, all "Set" function map to "Update" or "Create"
+	Set(item Item) error
+	// This stores multiple items into the storage with key->value pair.
+	SetMulti(items ...Item) ([]Item, error)
 
-		body, err := o.MarshalToJson()
-		if err != nil {
-			return nil, err
-		}
+	// Generally, all "Update" function map to "Update"
+	Update(item Item) error
+	// This stores multiple items into the storage with key->value pair.
+	UpdateMulti(items ...Item) ([]Item, error)
 
-		rd, err := elastic.NewElasticItem2(idx, parrent, body)
-		if err != nil {
-			return nil, err
-		}
-
-		rds = append(rds, rd)
-	}
-
-	return rds, nil
-}
-
-type ModelItem interface {
-	MarshalToJson() ([]byte, error)
-}
-
-// MarshalItemToKafkaJSON 序列化为KAFKA JSON
-func MarshalItemToKafkaJson(o ModelItem) ([]byte, error) {
-	results := make([]interface{}, 0)
-	data := make(map[string]interface{})
-
-	result, _ := o.MarshalToJson()
-
-	var v interface{}
-	decode.JSON.Unmarshal(result, &v)
-	results = append(results, v)
-
-	data["tunnelWyData"] = results
-	return decode.JSON.Marshal(data)
-}
-
-// MarshalMultiItemToKafkaJson 序列化为KAFKA JSON
-func MarshalMultiItemToKafkaJson(os []ModelItem) ([]byte, error) {
-	results := make([]interface{}, 0)
-	data := make(map[string]interface{})
-	for _, o := range os {
-		result, _ := o.MarshalToJson()
-		var v interface{}
-		decode.JSON.Unmarshal(result, &v)
-		results = append(results, v)
-	}
-
-	data["tunnelWyData"] = results
-	return decode.JSON.Marshal(data)
+	// This removes a single item from the storage.
+	Delete(key Key) error
+	// This removes multiple items from the storage.
+	DeleteMulti(keys ...Key) ([]Key, error)
 }
