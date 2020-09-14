@@ -1,6 +1,6 @@
 package caching
 
-import "code.aliyun.com/bim_backend/zoogoer/elastic"
+import "code.aliyun.com/new_backend/scodi_nqc/elastic"
 
 // ModelMarshalToElastic 序列化为ES对象
 func ModelMarshalToElastic(o Item) (elastic.ElasticItem, error) {
