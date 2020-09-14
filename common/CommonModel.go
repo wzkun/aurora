@@ -346,6 +346,16 @@ func (model2 *CommonModel) WhereType(Predicate model.Predicate, values ...string
 	return model2
 }
 
+// WhereLandId 查询条件设置
+func (model2 *CommonModel) WhereLandID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`land_id`", Predicate, values2...)
+	return model2
+}
+
 // WhereModelType 查询条件设置
 func (model2 *CommonModel) WhereModelType(Predicate model.Predicate, values ...string) *CommonModel {
 	values2 := make([]interface{}, len(values))
