@@ -585,6 +585,26 @@ func (model2 *CommonModel) WhereNodeID(Predicate model.Predicate, values ...stri
 	return model2
 }
 
+// WhereDay 查询条件设置
+func (model2 *CommonModel) WhereDay(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`day`", Predicate, values2...)
+	return model2
+}
+
+// WhereDistrictCode 查询条件设置
+func (model2 *CommonModel) WhereDistrictCode(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`district_code`", Predicate, values2...)
+	return model2
+}
+
 // OrderByProcInstID 排序条件设置
 func (model2 *CommonModel) OrderByProcInstID(desc bool) *CommonModel {
 	model2.Imp = model2.Imp.Order("`proc_inst_id`", desc)
