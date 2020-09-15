@@ -615,6 +615,36 @@ func (model2 *CommonModel) WhereDistrictCode(Predicate model.Predicate, values .
 	return model2
 }
 
+// WhereRegionID 查询条件设置
+func (model2 *CommonModel) WhereRegionID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`region_id`", Predicate, values2...)
+	return model2
+}
+
+// WhereEbsID 查询条件设置
+func (model2 *CommonModel) WhereEbsID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`ebs_id`", Predicate, values2...)
+	return model2
+}
+
+// WherePEbsID 查询条件设置
+func (model2 *CommonModel) WherePEbsID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`p_ebs_id`", Predicate, values2...)
+	return model2
+}
+
 // OrderByProcInstID 排序条件设置
 func (model2 *CommonModel) OrderByProcInstID(desc bool) *CommonModel {
 	model2.Imp = model2.Imp.Order("`proc_inst_id`", desc)
