@@ -421,6 +421,57 @@ func (model2 *CommonModel) WhereKind(Predicate model.Predicate, values ...string
 // 	return imp
 // }
 
+// Where 通用查询条件设置
+func (model2 *CommonModel) Where(name string, predicate model.Predicate, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, predicate, values2...)
+	return model2
+}
+
+// WherePublishRecordID 查询条件设置
+func (model2 *CommonModel) WherePublishRecordID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`publish_record_id`", Predicate, values2...)
+	return model2
+}
+
+// WhereTypeID 查询条件设置
+func (model2 *CommonModel) WhereTypeID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`type_id`", Predicate, values2...)
+	return model2
+}
+
+// WhereStandardID 查询条件设置
+func (model2 *CommonModel) WhereStandardID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`standard_id`", Predicate, values2...)
+	return model2
+}
+
+// WhereParentID 查询条件设置
+func (model2 *CommonModel) WhereParentID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`parent_id`", Predicate, values2...)
+	return model2
+}
+
 // WhereIsFinished 查询条件设置
 func (model2 *CommonModel) WhereIsFinished(Predicate model.Predicate, values ...bool) *CommonModel {
 	values2 := make([]interface{}, len(values))
@@ -642,6 +693,16 @@ func (model2 *CommonModel) WherePEbsID(Predicate model.Predicate, values ...stri
 		values2[index] = v
 	}
 	model2.Imp = model2.Imp.Where("`p_ebs_id`", Predicate, values2...)
+	return model2
+}
+
+// WhereEbsUnitTreeID 查询条件设置
+func (model2 *CommonModel) WhereEbsUnitTreeID(Predicate model.Predicate, values ...string) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+	model2.Imp = model2.Imp.Where("`ebs_unit_tree_id`", Predicate, values2...)
 	return model2
 }
 
