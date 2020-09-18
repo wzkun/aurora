@@ -706,8 +706,8 @@ func (model2 *CommonModel) WhereEbsUnitTreeID(Predicate model.Predicate, values 
 	return model2
 }
 
-// Order 排序条件设置
-func (model2 *CommonModel) Order(name string, desc bool) *CommonModel {
+// OrderBy 排序条件设置
+func (model2 *CommonModel) OrderBy(name string, desc bool) *CommonModel {
 	model2.Imp = model2.Imp.Order(name, desc)
 	return model2
 }
