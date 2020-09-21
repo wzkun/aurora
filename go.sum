@@ -20,6 +20,8 @@ code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200907080304-bc6b2a99df34 h1:AMvb
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200907080304-bc6b2a99df34/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200916072358-1245e8e3cc2e h1:qiicneElLtetlhYdtKenkZBS4gn1SQ29fBuMfwtY4TY=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200916072358-1245e8e3cc2e/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200921091317-9d2fe55350ec h1:dzGBk3EvwenUJUR86A6wPnBdKOVODixpLkt7DHit5a8=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200921091317-9d2fe55350ec/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
@@ -431,6 +433,8 @@ golang.org/x/sys v0.0.0-20200909081042-eff7692f9009 h1:W0lCpv29Hv0UaM1LXb9QlBHLN
 golang.org/x/sys v0.0.0-20200909081042-eff7692f9009/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200917073148-efd3b9a0ff20 h1:4X356008q5SA3YXu8PiRap39KFmy4Lf6sGlceJKZQsU=
 golang.org/x/sys v0.0.0-20200917073148-efd3b9a0ff20/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200918174421-af09f7315aff h1:1CPUrky56AcgSpxz/KfgzQWzfG09u5YOL8MvPYBlrL8=
+golang.org/x/sys v0.0.0-20200918174421-af09f7315aff/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
