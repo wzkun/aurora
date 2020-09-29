@@ -432,6 +432,17 @@ func (model2 *CommonModel) Where(name string, predicate model.Predicate, values 
 	return model2
 }
 
+// WhereEqual 通用查询条件设置
+func (model2 *CommonModel) WhereEqual(name string, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, model.Equal, values2...)
+	return model2
+}
+
 // WherePublishRecordID 查询条件设置
 func (model2 *CommonModel) WherePublishRecordID(Predicate model.Predicate, values ...string) *CommonModel {
 	values2 := make([]interface{}, len(values))
