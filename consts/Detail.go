@@ -1,5 +1,5 @@
 package consts
 
 const (
-	MarshalToElasticErrorDetail = "转换为es数据出错！"
+	MarshalToElasticDetail = "转换为es数据出错！"
 )
