@@ -31,4 +31,6 @@ const (
 	AuroraTunnelPartDelete     = "aurora.DeleteTunnelPart"
 	AuroraConstructZoneUpdate  = "aurora.UpdateConstructZone"
 	AuroraConstructZoneDelete  = "aurora.DeleteConstructZone"
+
+	PushMessageToKafka = "aurora.PushMessageToKafka"
 )

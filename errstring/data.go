@@ -6,8 +6,9 @@ import (
 )
 
 const (
-	ItemNotExist          = "record_not_exist.domain.app_error"
-	MarshalToElasticError = "marshal_to_elastic_error.domain.app_error"
+	ItemNotExist            = "record_not_exist.domain.app_error"
+	MarshalToElasticError   = "marshal_to_elastic_error.domain.app_error"
+	PushMessageToKafkaError = "push_message_to_kafka_error.domain.app_error"
 )
 
 // MakeItemNotExistDetail
