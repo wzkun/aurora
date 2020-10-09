@@ -22,6 +22,7 @@ const (
 	CreateMysqlDataError = "create_mysql_data_error.domain.app_error"
 	DeleteMysqlDataError = "delete_mysql_data_error.domain.app_error"
 	UpdateMysqlDataError = "update_mysql_data_error.domain.app_error"
+	QueryMysqlDataError  = "query_mysql_data_error.domain.app_error"
 )
 
 // MakeItemNotExistDetail
