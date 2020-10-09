@@ -12,5 +12,6 @@ type PushWorkflowHistory struct {
 	PushCode    string   `json:"pushCode" comment:"推送code" optional:"false"`
 	Kind        string   `json:"kind" comment:"推送类型,normal,start等" optional:"false"`
 	UserIds     []string `json:"userIds" comment:"用户账号列表" optional:"false"`
-	OperatorId  string   `json:"operatorId" comment:"operatorId" optional:"false"`
+	OperatorId  string   `json:"operatorId" comment:"操作人id" optional:"false"`
+	StartUserId string   `json:"startUserId" comment:"发起人id" optional:"false"`
 }
