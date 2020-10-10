@@ -3,7 +3,6 @@ package errstring
 import (
 	"strings"
 
-	"code.aliyun.com/bim_backend/zoogoer/gun/errors"
 	"github.com/jinzhu/gorm"
 	"github.com/sirupsen/logrus"
 	"github.com/wzkun/aurora/consts"
@@ -28,7 +27,7 @@ const (
 // MakeItemNotExistDetail
 func MakeItemNotExistDetail(id, apiName string) error {
 	detail := "数据不存在【" + id + "】"
-	return errors.NewClientErr(nil, ItemNotExist, detail, apiName, nil)
+	return NewClientErr(nil, ItemNotExist, detail, apiName, nil)
 }
 
 // MakeErrorDebug
@@ -39,17 +38,17 @@ func MakeErrorDebug(apiName string, sort int, err error) {
 
 // MakeResponseError
 func MakeResponseError(code, detail, apiName string) error {
-	return errors.NewClientErr(nil, code, detail, apiName, nil)
+	return NewClientErr(nil, code, detail, apiName, nil)
 }
 
 // MakeResponseError2
 func MakeResponseError2(code, detail, apiName string, err error) error {
 	if strings.Contains(err.Error(), "Duplicate") {
 		newdetail := consts.ItemAlreadyExistDetail + ": " + err.Error()
-		return errors.NewClientErr(nil, ItemAlreadyExist, newdetail, apiName, nil)
+		return NewClientErr(nil, ItemAlreadyExist, newdetail, apiName, nil)
 	}
 	if err == gorm.ErrRecordNotFound {
-		return errors.NewClientErr(nil, ItemNotExist, consts.ItemNotExistDetail, apiName, nil)
+		return NewClientErr(nil, ItemNotExist, consts.ItemNotExistDetail, apiName, nil)
 	}
 
 	return MakeResponseError(code, detail, apiName)
