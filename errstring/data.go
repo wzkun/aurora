@@ -44,7 +44,7 @@ func MakeResponseError(code, detail, apiName string) error {
 
 // MakeResponseError2
 func MakeResponseError2(code, detail, apiName string, err error) error {
-	if strings.Contains(err.Error(), "Duplicated") {
+	if strings.Contains(err.Error(), "Duplicate") {
 		newdetail := consts.ItemAlreadyExistDetail + ": " + err.Error()
 		return errors.NewClientErr(nil, ItemAlreadyExist, newdetail, apiName, nil)
 	}
