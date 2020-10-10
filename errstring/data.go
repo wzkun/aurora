@@ -1,6 +1,7 @@
 package errstring
 
 import (
+	"strconv"
 	"strings"
 
 	"github.com/jinzhu/gorm"
@@ -31,8 +32,8 @@ func MakeItemNotExistDetail(id, apiName string) error {
 }
 
 // MakeErrorDebug
-func MakeErrorDebug(apiName string, sort int, err error) {
-	apiName = "--**== " + apiName + "==**-- " + string(sort) + " :  "
+func MakeErrorDebug(apiName string, sort int64, err error) {
+	apiName = "--**== " + apiName + "==**-- " + strconv.FormatInt(sort, 10) + " :  "
 	logrus.Debugln(apiName, err)
 }
 
