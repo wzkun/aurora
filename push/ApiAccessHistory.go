@@ -10,14 +10,14 @@ import (
 
 // ApiAccessHistory
 type ApiAccessHistory struct {
-	Account     string `json:"account" comment:"account" optional:"false"`
-	ServerName  string `json:"ServerName" comment:"ServerName" optional:"false"`
-	ModuleName  string `json:"ModuleName" comment:"ModuleName" optional:"false"`
-	ServiceName string `json:"ServiceName" comment:"ServiceName" optional:"false"`
-	ApiName     string `json:"ApiName" comment:"ApiName" optional:"false"`
-	Request     string `json:"Request" comment:"Request" optional:"false"`
-	Response    string `json:"Response" comment:"Response" optional:"false"`
-	Errorstring string `json:"Errorstring" comment:"Errorstring" optional:"false"`
+	Account     string `json:"account" comment:"账号"`
+	ServerName  string `json:"serverName" comment:"微服务名称" optional:"false"`
+	ModuleName  string `json:"moduleName" comment:"模块名称" optional:"false"`
+	ServiceName string `json:"serviceName" comment:"服务名称" optional:"false"`
+	ApiName     string `json:"apiName" comment:"接口名称" optional:"false"`
+	Request     string `json:"request" comment:"请求参数" optional:"false"`
+	Response    string `json:"response" comment:"相应参数"`
+	Errorstring string `json:"errorstring" comment:"错误信息"`
 }
 
 // RecordApiAccessHistory
