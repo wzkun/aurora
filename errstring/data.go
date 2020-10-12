@@ -4,14 +4,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/jinzhu/gorm"
 	"github.com/sirupsen/logrus"
 	"github.com/wzkun/aurora/consts"
 )
 
 const (
-	ItemNotExist                = "record_not_exist.domain.app_error"
-	ItemAlreadyExist            = "record_already_exist.domain.app_error"
+	ItemNotExist     = "record_not_exist.domain.app_error"
+	ItemAlreadyExist = "record_already_exist.domain.app_error"
+	RecordNotFound   = "record not found"
+
 	MarshalToElasticError       = "marshal_to_elastic_error.domain.app_error"
 	PushMessageToKafkaError     = "push_message_to_kafka_error.domain.app_error"
 	RecordApiAccessHistoryError = "record_api_access_history_error.domain.app_error"
@@ -54,7 +55,7 @@ func MakeResponseError2(code, detail, apiName string, err error) error {
 		newdetail := consts.ItemAlreadyExistDetail + ": " + err.Error()
 		return NewClientErr(nil, ItemAlreadyExist, newdetail, apiName, nil)
 	}
-	if err == gorm.ErrRecordNotFound {
+	if strings.Contains(err.Error(), RecordNotFound) {
 		return NewClientErr(nil, ItemNotExist, consts.ItemNotExistDetail, apiName, nil)
 	}
 
