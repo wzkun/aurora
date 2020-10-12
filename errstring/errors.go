@@ -26,6 +26,14 @@ func (e *ClientErr) Error() string {
 	return code
 }
 
+func (e *ClientErr) PError() string {
+	code := fmt.Sprintf("%s|%s|%s", e.Code, e.Where, e.DetailedError)
+	if e.ParentErr != nil {
+		code = fmt.Sprintf("%s|%s|%s|%s", e.ParentErr.Error(), e.Code, e.Where, e.DetailedError)
+	}
+	return code
+}
+
 // Parent error
 func (e *ClientErr) Parent() error {
 	return e.ParentErr
