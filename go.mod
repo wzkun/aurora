@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	code.aliyun.com/bim_backend/zoogoer v0.0.0-20200812075521-c4f16747a85b
-	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200930044919-979af6e06790
+	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201010080526-67df543e801b
 	github.com/andybalholm/brotli v1.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gomodule/redigo/redis v0.0.0-20200429221454-e14091dffc1b // indirect

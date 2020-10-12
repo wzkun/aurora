@@ -33,4 +33,6 @@ const (
 	AuroraConstructZoneDelete  = "aurora.DeleteConstructZone"
 
 	PushMessageToKafka = "aurora.PushMessageToKafka"
+
+	RecordApiAccessHistory = "aurora.RecordApiAccessHistory"
 )

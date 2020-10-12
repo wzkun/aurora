@@ -14,6 +14,8 @@ code.aliyun.com/bim_backend/zoogoer v0.0.0-20200812075521-c4f16747a85b h1:ADPIfH
 code.aliyun.com/bim_backend/zoogoer v0.0.0-20200812075521-c4f16747a85b/go.mod h1:kuSmy8O24bgXNR4/9cYULGs6CfQSHWFhaFqnp8r7hgM=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200930044919-979af6e06790 h1:6DSnQqg/QOF+8fghc0efdDvAt4/dw376PbXYq/0JRHs=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20200930044919-979af6e06790/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201010080526-67df543e801b h1:pP6ApYHYiQQgTl3T1Am27EkB84f7b/0NjmaYd7cG47o=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201010080526-67df543e801b/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=

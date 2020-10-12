@@ -10,10 +10,11 @@ import (
 )
 
 const (
-	ItemNotExist            = "record_not_exist.domain.app_error"
-	ItemAlreadyExist        = "record_already_exist.domain.app_error"
-	MarshalToElasticError   = "marshal_to_elastic_error.domain.app_error"
-	PushMessageToKafkaError = "push_message_to_kafka_error.domain.app_error"
+	ItemNotExist                = "record_not_exist.domain.app_error"
+	ItemAlreadyExist            = "record_already_exist.domain.app_error"
+	MarshalToElasticError       = "marshal_to_elastic_error.domain.app_error"
+	PushMessageToKafkaError     = "push_message_to_kafka_error.domain.app_error"
+	RecordApiAccessHistoryError = "record_api_access_history_error.domain.app_error"
 
 	CreateElasticSearchDataError = "create_elastic_search_data_error.domain.app_error"
 	DeleteElasticSearchDataError = "delete_elastic_search_data_error.domain.app_error"
