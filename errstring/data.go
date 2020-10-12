@@ -43,6 +43,11 @@ func MakeResponseError(code, detail, apiName string) error {
 	return NewClientErr(nil, code, detail, apiName, nil)
 }
 
+// MakeResponseError3
+func MakeResponseError3(err error, code, detail, apiName string) error {
+	return NewClientErr(err, code, detail, apiName, nil)
+}
+
 // MakeResponseError2
 func MakeResponseError2(code, detail, apiName string, err error) error {
 	if strings.Contains(err.Error(), "Duplicate") {
