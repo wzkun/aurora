@@ -12,6 +12,7 @@ const (
 	ItemNotExist     = "record_not_exist.domain.app_error"
 	ItemAlreadyExist = "record_already_exist.domain.app_error"
 	RecordNotFound   = "record not found"
+	RecordDuplicate  = "Duplicate"
 
 	MarshalToElasticError       = "marshal_to_elastic_error.domain.app_error"
 	PushMessageToKafkaError     = "push_message_to_kafka_error.domain.app_error"
@@ -51,12 +52,13 @@ func MakeResponseError3(err error, code, detail, apiName string) error {
 
 // MakeResponseError2
 func MakeResponseError2(code, detail, apiName string, err error) error {
-	if strings.Contains(err.Error(), "Duplicate") {
+	if strings.Contains(err.Error(), RecordDuplicate) {
 		newdetail := consts.ItemAlreadyExistDetail + ": " + err.Error()
-		return NewClientErr(nil, ItemAlreadyExist, newdetail, apiName, nil)
+		return MakeResponseError(ItemAlreadyExist, newdetail, apiName)
 	}
+
 	if strings.Contains(err.Error(), RecordNotFound) {
-		return NewClientErr(nil, ItemNotExist, consts.ItemNotExistDetail, apiName, nil)
+		return MakeResponseError(ItemNotExist, consts.ItemNotExistDetail, apiName)
 	}
 
 	return MakeResponseError(code, detail, apiName)
