@@ -3,6 +3,7 @@ package decode
 import (
 	"encoding/json"
 	"fmt"
+	"reflect"
 
 	jsoniter "github.com/json-iterator/go"
 )
@@ -37,4 +38,19 @@ func Str2Map(source string) (map[string]interface{}, error) {
 	res := make(map[string]interface{})
 	err := json.Unmarshal([]byte(source), &res)
 	return res, err
+}
+
+// MarshalModuleToJson
+func MarshalModuleToJson(value interface{}) ([]byte, error) {
+	var result = make(map[string]interface{})
+	objValue := reflect.Indirect(reflect.ValueOf(value))
+	for i := 0; i < objValue.NumField(); i++ {
+		jsonName := objValue.Type().Field(i).Tag.Get("nJson")
+		if len(jsonName) == 0 {
+			//jsonName = objValue.Type().Field(i).Name
+			continue
+		}
+		result[jsonName] = objValue.Field(i).Interface()
+	}
+	return json.Marshal(result)
 }
