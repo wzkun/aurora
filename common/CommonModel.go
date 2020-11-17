@@ -138,6 +138,7 @@ func (model2 *CommonModel) InsertsWithTag(tag string, values ...interface{}) (er
 					if !ValueIsTime(rValue.Field(i)) {
 						continue
 					}
+				}
 				jsonName := rValue2.Type().Field(i).Tag.Get("json")
 				if len(jsonName) == 0 {
 					jsonName = utils.Marshal(rValue2.Type().Field(i).Name)
