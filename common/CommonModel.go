@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
+	"time"
 
 	"code.aliyun.com/new_backend/scodi_nqc/decode"
 	"code.aliyun.com/new_backend/scodi_nqc/model"
@@ -53,16 +54,20 @@ func (model2 *CommonModel) ReplaceMulti(values ...interface{}) (err error) {
 	return model2.InsertsWithTag("replace into ", values...)
 }
 
+// ValueIsTime
+func ValueIsTime(field reflect.Value) bool {
+	tempType := field.Type()
+	return tempType.AssignableTo(reflect.TypeOf((*time.Time)(nil)))
+}
+
 // ValueIsStruct
 func ValueIsStruct(field reflect.Value) bool {
 	tempType := field.Type()
 	for tempType.Kind() == reflect.Ptr {
 		tempType = tempType.Elem()
 	}
-	if tempType.Kind() == reflect.Struct {
-		return true
-	}
-	return false
+
+	return tempType.Kind() == reflect.Struct
 }
 
 // InsertsWithTag 批量插入操作
@@ -86,7 +91,9 @@ func (model2 *CommonModel) InsertsWithTag(tag string, values ...interface{}) (er
 	for i := 0; i < rValue.NumField(); i++ {
 
 		if ValueIsStruct(rValue.Field(i)) {
-			continue
+			if !ValueIsTime(rValue.Field(i)) {
+				continue
+			}
 		}
 		jsonName := rValue.Type().Field(i).Tag.Get("json")
 		if len(jsonName) == 0 {
