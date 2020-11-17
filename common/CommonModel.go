@@ -135,8 +135,9 @@ func (model2 *CommonModel) InsertsWithTag(tag string, values ...interface{}) (er
 			rValue2 := reflect.Indirect(reflect.ValueOf(v))
 			for i := 0; i < rValue2.NumField(); i++ {
 				if ValueIsStruct(rValue2.Field(i)) {
-					continue
-				}
+					if !ValueIsTime(rValue.Field(i)) {
+						continue
+					}
 				jsonName := rValue2.Type().Field(i).Tag.Get("json")
 				if len(jsonName) == 0 {
 					jsonName = utils.Marshal(rValue2.Type().Field(i).Name)
