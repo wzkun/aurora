@@ -56,7 +56,7 @@ func (model2 *CommonModel) ReplaceMulti(values ...interface{}) (err error) {
 // ValueIsTime
 func ValueIsTime(field reflect.Value) bool {
 	tempType := field.Type().String()
-	return tempType == "time.Time"
+	return tempType == "time.Time" || tempType == "*time.Time"
 }
 
 // ValueIsStruct
