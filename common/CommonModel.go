@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
-	"time"
 
 	"code.aliyun.com/new_backend/scodi_nqc/decode"
 	"code.aliyun.com/new_backend/scodi_nqc/model"
@@ -56,8 +55,8 @@ func (model2 *CommonModel) ReplaceMulti(values ...interface{}) (err error) {
 
 // ValueIsTime
 func ValueIsTime(field reflect.Value) bool {
-	tempType := field.Type()
-	return tempType.AssignableTo(reflect.TypeOf((*time.Time)(nil)))
+	tempType := field.Type().String()
+	return tempType == "time.Time"
 }
 
 // ValueIsStruct
@@ -90,6 +89,118 @@ func (model2 *CommonModel) InsertsWithTag(tag string, values ...interface{}) (er
 	rValue := reflect.Indirect(reflect.ValueOf(values[0]))
 	for i := 0; i < rValue.NumField(); i++ {
 
+		if ValueIsStruct(rValue.Field(i)) {
+			if !ValueIsTime(rValue.Field(i)) {
+				continue
+			}
+		}
+		jsonName := rValue.Type().Field(i).Tag.Get("json")
+		if len(jsonName) == 0 {
+			jsonName = utils.Marshal(rValue.Type().Field(i).Name)
+		}
+		if (rValue.Field(i).Kind() == reflect.Int ||
+			rValue.Field(i).Kind() == reflect.Int8 || rValue.Field(i).Kind() == reflect.Int32 ||
+			rValue.Field(i).Kind() == reflect.Int64 || rValue.Field(i).Kind() == reflect.Int16) &&
+			(rValue.Field(i).Interface() == nil || rValue.Field(i).Interface() == 0) {
+			continue
+		}
+		if jsonName == "-" {
+			continue
+		}
+		sqlString.WriteString("`")
+		sqlString.WriteString(jsonName)
+		sqlString.WriteString("`")
+		if i != rValue.NumField()-1 {
+			sqlString.WriteString(",")
+		}
+	}
+	if strings.HasSuffix(sqlString.String(), ",") {
+		sqlString.Truncate(sqlString.Len() - 1)
+	}
+	sqlString.WriteString(") values(")
+	fmt.Println("sqlString.String()", sqlString.String())
+	for i := 0; i < num; i++ {
+
+		var items []interface{}
+		if (i+1)*pre > len(values) {
+			items = values[i*pre:]
+		} else {
+			items = values[i*pre : (i+1)*pre]
+		}
+		sqlString2 := bytes.Buffer{}
+		sqlString2.WriteString(sqlString.String())
+		var vList []interface{}
+		for index, v := range items {
+			rValue2 := reflect.Indirect(reflect.ValueOf(v))
+			for i := 0; i < rValue2.NumField(); i++ {
+				if ValueIsStruct(rValue2.Field(i)) {
+					if !ValueIsTime(rValue.Field(i)) {
+						continue
+					}
+				}
+				jsonName := rValue2.Type().Field(i).Tag.Get("json")
+				if len(jsonName) == 0 {
+					jsonName = utils.Marshal(rValue2.Type().Field(i).Name)
+				}
+				if (rValue.Field(i).Kind() == reflect.Int ||
+					rValue.Field(i).Kind() == reflect.Int8 || rValue.Field(i).Kind() == reflect.Int32 ||
+					rValue.Field(i).Kind() == reflect.Int64 || rValue.Field(i).Kind() == reflect.Int16) && rValue.Field(i).Interface() == 0 {
+					continue
+				}
+				if jsonName == "-" {
+					continue
+				}
+				sqlString2.WriteString("?")
+				if i != rValue.NumField()-1 {
+					sqlString2.WriteString(",")
+				}
+				vList = append(vList, rValue2.Field(i).Interface())
+			}
+			if strings.HasSuffix(sqlString2.String(), ",") {
+				sqlString2.Truncate(sqlString2.Len() - 1)
+			}
+			if index != len(items)-1 {
+				sqlString2.WriteString("),(")
+			} else {
+				sqlString2.WriteString(")")
+			}
+		}
+
+		//fmt.Println("vList",vList[:30])
+		DB := tx.Exec(sqlString2.String(), vList...)
+		if DB.Error != nil {
+			fmt.Println("db", DB.Error)
+			tx.Rollback()
+			return DB.Error
+		} else {
+			fmt.Println("db成功", i, "/", num)
+		}
+	}
+
+	return tx.Commit().Error
+}
+
+// InsertsWithTag 批量插入操作
+func (model2 *CommonModel) InsertsWithTagAndDatabase(tag, database string, values ...interface{}) (err error) {
+	fmt.Println("==tag,database===", tag, database)
+	if len(values) <= 0 {
+		return nil
+	}
+	tx := model2.GormDB().Begin()
+
+	pre := 200
+	num := len(values) / pre
+	if len(values)%pre != 0 {
+		num++
+	}
+	sqlString := bytes.Buffer{}
+	sqlString.WriteString(tag + " " + database + ".")
+	sqlString.WriteString(values[0].(caching.Item).TableName())
+	sqlString.WriteString(" (")
+	rValue := reflect.Indirect(reflect.ValueOf(values[0]))
+	for i := 0; i < rValue.NumField(); i++ {
+
+		fmt.Println("==tag===", rValue.Type().Field(i).Tag.Get("json"))
 		if ValueIsStruct(rValue.Field(i)) {
 			if !ValueIsTime(rValue.Field(i)) {
 				continue

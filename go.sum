@@ -18,8 +18,12 @@ code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201010080526-67df543e801b h1:pP6A
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201010080526-67df543e801b/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201117065942-40e52cef1b3a h1:fxfZLQ+sRPzUBEC8m+476sP31Tfi2ZkVJjMXagS9a6k=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201117065942-40e52cef1b3a/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201123041526-9ef05226de6a h1:pDV9xKOsXt3K2mzQdmapbUkHnWPCr+Q/xwt2VdplyBo=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201123041526-9ef05226de6a/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 code.aliyun.com/yjkj.ink/utils v0.0.0-20201112072605-21da50f22c7a h1:sjCYWdXKZcNV9Ww7ntGU+0Vn5N9+EVQUQgN4UKG28H0=
 code.aliyun.com/yjkj.ink/utils v0.0.0-20201112072605-21da50f22c7a/go.mod h1:UTyF7x0B3X+D4WJQbKvwm9+/ALca431PziNudGth+r0=
+code.aliyun.com/yjkj.ink/utils v0.0.0-20201119070717-2b5e96fa8e68 h1:NDna3OjDslEzJ2nyXP+BQCQ7baUMwD135lZhFn5dk1Y=
+code.aliyun.com/yjkj.ink/utils v0.0.0-20201119070717-2b5e96fa8e68/go.mod h1:UTyF7x0B3X+D4WJQbKvwm9+/ALca431PziNudGth+r0=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
@@ -374,6 +378,8 @@ golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 h1:hb9wdF1z5waM+dSIICn1l0
 golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20201116153603-4be66e5b6582 h1:0WDrJ1E7UolDk1KhTXxxw3Fc8qtk5x7dHP431KHEJls=
 golang.org/x/crypto v0.0.0-20201116153603-4be66e5b6582/go.mod h1:tCqSYrHVcf3i63Co2FzBkTCo2gdF6Zak62921dSfraU=
+golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9 h1:phUcVbl53swtrUN8kQEXFhUxPlIlWyBfKmidCu7P95o=
+golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190510132918-efd6b22b2522/go.mod h1:ZjyILWgesfNpC6sMxTJOJm9Kp84zZh5NQWvqDGG3Qr8=
@@ -461,7 +467,10 @@ golang.org/x/sys v0.0.0-20201009025420-dfb3f7c4e634 h1:bNEHhJCnrwMKNMmOx3yAynp5v
 golang.org/x/sys v0.0.0-20201009025420-dfb3f7c4e634/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20201116194326-cc9327a14d48 h1:AYCWBZhgIw6XobZ5CibNJr0Rc4ZofGGKvWa1vcx2IGk=
 golang.org/x/sys v0.0.0-20201116194326-cc9327a14d48/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20201119102817-f84b799fce68 h1:nxC68pudNYkKU6jWhgrqdreuFiOQWj1Fs7T3VrH4Pjw=
+golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/term v0.0.0-20201113234701-d7a72108b828/go.mod h1:Nr5EML6q2oocZ2LXRh80K7BxOlk5/8JxuGnuhpl+muw=
+golang.org/x/term v0.0.0-20201117132131-f5c789dd3221/go.mod h1:Nr5EML6q2oocZ2LXRh80K7BxOlk5/8JxuGnuhpl+muw=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
