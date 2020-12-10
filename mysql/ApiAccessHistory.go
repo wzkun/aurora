@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"time"
 
+	"code.aliyun.com/new_backend/scodi_nqc/model"
 	"github.com/wzkun/aurora/common"
 	"github.com/wzkun/aurora/utils"
 )
@@ -71,22 +72,22 @@ func (o *ApiAccessHistory) ElasticIndex() string {
 }
 
 // DBModel
-func (o *ApiAccessHistory) DBModel() ElasticModel {
+func (o *ApiAccessHistory) DBModel() model.ElasticModel {
 	return nil
 }
 
 // QueryAllItem
-func (o *ApiAccessHistory) QueryAllItem(imp *ModelImp) ([]ModelItem, error) {
+func (o *ApiAccessHistory) QueryAllItem(imp *model.ModelImp) ([]model.ModelItem, error) {
 	return nil, nil
 }
 
 // QueryItems
-func (o *ApiAccessHistory) QueryItems(sqlCommand string) ([]ModelItem, error) {
+func (o *ApiAccessHistory) QueryItems(sqlCommand string) ([]model.ModelItem, error) {
 	return nil, nil
 }
 
 // InsertAll
-func (o *ApiAccessHistory) InsertAll(*ModelImp, []ModelItem) {
+func (o *ApiAccessHistory) InsertAll(*model.ModelImp, []model.ModelItem) {
 }
 
 //NewModelApiAccessHistory function.
