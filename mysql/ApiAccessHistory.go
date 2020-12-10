@@ -10,11 +10,11 @@ import (
 // ApiAccessHistory 数据模型
 type ApiAccessHistory struct {
 	Id          string ` optional:"true" json:"id" nJson:"id" gorm:"comment:'数据编号'"`
-	Account     string ` optional:"true" json:"account" nJson:"account" gorm:"comment:'用户账号'"`
+	Account     string ` optional:"true" json:"account" nJson:"account" gorm:"comment:'用户账号';index"`
 	ServerName  string ` optional:"true" json:"server_name" nJson:"serverName" gorm:"comment:'微服务名称'"`
-	ModuleName  string ` json:"module_name" nJson:"moduleName" optional:"true" gorm:"comment:'模块名称'"`
-	ServiceName string ` optional:"true" json:"service_name" nJson:"serviceName" gorm:"comment:'服务名称'"`
-	ApiName     string ` optional:"true" json:"api_name" nJson:"apiName" gorm:"comment:'接口名称'"`
+	ModuleName  string ` json:"module_name" nJson:"moduleName" optional:"true" gorm:"comment:'模块名称';index"`
+	ServiceName string ` optional:"true" json:"service_name" nJson:"serviceName" gorm:"comment:'服务名称';index"`
+	ApiName     string ` optional:"true" json:"api_name" nJson:"apiName" gorm:"comment:'接口名称';index"`
 	CreateTime  string ` optional:"true" json:"create_time" nJson:"createTime" gorm:"comment:'操作时间'"`
 	Request     string ` nJson:"request" optional:"true" json:"request" gorm:"comment:'接口参数';type:longtext"`
 	Response    string ` optional:"true" json:"response" nJson:"response" gorm:"comment:'返回数据';type:longtext"`
