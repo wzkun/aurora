@@ -2,11 +2,9 @@ package mysql
 
 import (
 	"bytes"
-	"time"
 
 	"code.aliyun.com/new_backend/scodi_nqc/model"
 	"github.com/wzkun/aurora/common"
-	"github.com/wzkun/aurora/utils"
 )
 
 // ApiAccessHistory 数据模型
@@ -88,22 +86,4 @@ func (o *ApiAccessHistory) QueryItems(sqlCommand string) ([]model.ModelItem, err
 
 // InsertAll
 func (o *ApiAccessHistory) InsertAll(*model.ModelImp, []model.ModelItem) {
-}
-
-//NewModelApiAccessHistory function.
-func NewModelApiAccessHistory(account, serverName, moduleName, serviceName, apiName, request, response, errorstring string) *ApiAccessHistory {
-	rd := &ApiAccessHistory{}
-
-	rd.Id = utils.NewUUIdV4()
-	rd.Account = account
-	rd.ServerName = serverName
-	rd.ModuleName = moduleName
-	rd.ServiceName = serviceName
-	rd.ApiName = apiName
-	rd.CreateTime = time.Now().String()
-	rd.Request = request
-	rd.Response = response
-	rd.Error = errorstring
-
-	return rd
 }
