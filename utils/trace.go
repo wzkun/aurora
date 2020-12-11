@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+	"strings"
 	"time"
 
 	"github.com/gogo/protobuf/proto"
@@ -79,7 +80,15 @@ func RecordApiAccessHistory(account, moduleName, serviceName, apiName, request, 
 	rd.ApiName = apiName
 	rd.CreateTime = time.Now().String()
 	rd.Request = request
-	rd.Response = response
+
+	if strings.Contains(apiName, "CreateMulti") || strings.Contains(apiName, "MergeMulti") {
+		rd.Response = ""
+	} else if strings.Contains(apiName, "Query") || strings.Contains(apiName, "Search") {
+		rd.Response = ""
+	} else {
+		rd.Response = response
+	}
+
 	rd.Error = errorstring
 
 	err := rd.Insert()
