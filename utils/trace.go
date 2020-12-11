@@ -12,13 +12,12 @@ import (
 )
 
 // TraceRPCRequest Function
-func TraceRPCRequest(operator, servcie, method string, req interface{}) {
+func TraceRPCRequest(servcie, method string, req interface{}) {
 	logrus.WithFields(logrus.Fields{
-		"Service":  servcie,
-		"Methold":  method,
-		"Step":     "PreRequest",
-		"operator": operator,
-		"Request":  req,
+		"Service": servcie,
+		"Methold": method,
+		"Step":    "PreRequest",
+		"Request": req,
 	}).Info()
 }
 
