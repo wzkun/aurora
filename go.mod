@@ -4,8 +4,8 @@ go 1.14
 
 require (
 	code.aliyun.com/bim_backend/zoogoer v0.0.0-20200812075521-c4f16747a85b
-	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201201074432-07610ba09675
-	code.aliyun.com/yjkj.ink/utils v0.0.0-20201207075106-089e39bf035a // indirect
+	code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201230084450-ee60ba4dc751
+	code.aliyun.com/yjkj.ink/utils v0.0.0-20201216080429-7c2ceb59667a // indirect
 	github.com/andybalholm/brotli v1.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gogo/protobuf v1.3.1
@@ -13,7 +13,7 @@ require (
 	github.com/gomodule/redigo/redis v0.0.0-20200429221454-e14091dffc1b // indirect
 	github.com/jinzhu/gorm v1.9.16
 	github.com/json-iterator/go v1.1.10
-	github.com/klauspost/compress v1.11.3 // indirect
+	github.com/klauspost/compress v1.11.4 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mattn/go-sqlite3 v1.14.5 // indirect
 	github.com/mitchellh/mapstructure v1.4.0 // indirect
@@ -27,9 +27,9 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.7.1 // indirect
 	github.com/valyala/fasthttp v1.18.0
-	golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9
+	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
 	golang.org/x/sync v0.0.0-20201207232520-09787c993a3a // indirect
-	golang.org/x/sys v0.0.0-20201211002650-1f0c578a6b29 // indirect
+	golang.org/x/sys v0.0.0-20201223074533-0d417f636930 // indirect
 	golang.org/x/text v0.3.4 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

@@ -16,10 +16,14 @@ code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201123041526-9ef05226de6a h1:pDV9
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201123041526-9ef05226de6a/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201201074432-07610ba09675 h1:za7bLZN/IN1ggWQQhfJpn6IHXrTOsE4tfwl2XHQEHUI=
 code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201201074432-07610ba09675/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201230084450-ee60ba4dc751 h1:vWfCP/3/VU5REzgpMhKGLPBluytJTDcOyOHIQJzwCI8=
+code.aliyun.com/new_backend/scodi_nqc v0.0.0-20201230084450-ee60ba4dc751/go.mod h1:r3v7UOwcuLDwuqwrBpQLDzn8pXU7ELD9aFPsM6+3ZkU=
 code.aliyun.com/yjkj.ink/utils v0.0.0-20201119070717-2b5e96fa8e68 h1:NDna3OjDslEzJ2nyXP+BQCQ7baUMwD135lZhFn5dk1Y=
 code.aliyun.com/yjkj.ink/utils v0.0.0-20201119070717-2b5e96fa8e68/go.mod h1:UTyF7x0B3X+D4WJQbKvwm9+/ALca431PziNudGth+r0=
 code.aliyun.com/yjkj.ink/utils v0.0.0-20201207075106-089e39bf035a h1:HJJ8qnvOQlO2Dk6nUSpABFe08ly1yvDz9rxxep9K8cU=
 code.aliyun.com/yjkj.ink/utils v0.0.0-20201207075106-089e39bf035a/go.mod h1:UTyF7x0B3X+D4WJQbKvwm9+/ALca431PziNudGth+r0=
+code.aliyun.com/yjkj.ink/utils v0.0.0-20201216080429-7c2ceb59667a h1:9FrNGHzsUZGJg4QqzwEAjEaudJsgrcfn45Heyk9PALk=
+code.aliyun.com/yjkj.ink/utils v0.0.0-20201216080429-7c2ceb59667a/go.mod h1:UTyF7x0B3X+D4WJQbKvwm9+/ALca431PziNudGth+r0=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
@@ -194,6 +198,8 @@ github.com/klauspost/compress v1.10.7 h1:7rix8v8GpI3ZBb0nSozFRgbtXKv+hOe+qfEpZqy
 github.com/klauspost/compress v1.10.7/go.mod h1:aoV0uJVorq1K+umq18yTdKaF57EivdYsUV+/s2qKfXs=
 github.com/klauspost/compress v1.11.3 h1:dB4Bn0tN3wdCzQxnS8r06kV74qN/TAfaIS0bVE8h3jc=
 github.com/klauspost/compress v1.11.3/go.mod h1:aoV0uJVorq1K+umq18yTdKaF57EivdYsUV+/s2qKfXs=
+github.com/klauspost/compress v1.11.4 h1:kz40R/YWls3iqT9zX9AHN3WoVsrAWVyui5sxuLqiXqU=
+github.com/klauspost/compress v1.11.4/go.mod h1:aoV0uJVorq1K+umq18yTdKaF57EivdYsUV+/s2qKfXs=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3 h1:CE8S1cTafDpPvMhIxNJKvHsGVBgn1xWYf1NbHQhywc8=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
@@ -367,6 +373,8 @@ golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9 h1:phUcVbl53swtrUN8kQEXFh
 golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9 h1:sYNJzB4J8toYPQTM6pAkcmBRgw9SnQKP9oXCHfgy604=
 golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
+golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad h1:DN0cp81fZ3njFcrLCytUHRSUkqBjfTo4Tx9RJTWs0EY=
+golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190510132918-efd6b22b2522/go.mod h1:ZjyILWgesfNpC6sMxTJOJm9Kp84zZh5NQWvqDGG3Qr8=
@@ -452,6 +460,8 @@ golang.org/x/sys v0.0.0-20201119102817-f84b799fce68 h1:nxC68pudNYkKU6jWhgrqdreuF
 golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20201211002650-1f0c578a6b29 h1:hAYi5mzhvBeCfkgaIHGZ8R+Q04WjSW5ZvQO3BZ94dHY=
 golang.org/x/sys v0.0.0-20201211002650-1f0c578a6b29/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20201223074533-0d417f636930 h1:vRgIt+nup/B/BwIS0g2oC0haq0iqbV3ZA+u6+0TlNCo=
+golang.org/x/sys v0.0.0-20201223074533-0d417f636930/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/term v0.0.0-20201117132131-f5c789dd3221/go.mod h1:Nr5EML6q2oocZ2LXRh80K7BxOlk5/8JxuGnuhpl+muw=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
