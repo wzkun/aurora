@@ -9,11 +9,12 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/wzkun/aurora/errstring"
 	"github.com/wzkun/aurora/mysql.v2"
+	"github.com/wzkun/aurora/utils"
 	"github.com/wzkun/aurora/utils/decode"
 )
 
 // TraceRPCRequest Function
-func TraceRPCRequestV2(servcie, method string, req interface{}) {
+func TraceRPCRequest(servcie, method string, req interface{}) {
 	logrus.WithFields(logrus.Fields{
 		"Service": servcie,
 		"Methold": method,
@@ -23,7 +24,7 @@ func TraceRPCRequestV2(servcie, method string, req interface{}) {
 }
 
 // TraceRPCResponse Function
-func TraceRPCResponseV2(operator, moduleName, servcie, method string, err error, req, resp proto.Message) {
+func TraceRPCResponse(operator, moduleName, servcie, method string, err error, req, resp proto.Message) {
 	request, _ := decode.PROTO.MarshalToJSON(req)
 	response, _ := decode.PROTO.MarshalToJSON(resp)
 
@@ -32,7 +33,7 @@ func TraceRPCResponseV2(operator, moduleName, servcie, method string, err error,
 		if err != nil {
 			errorstring = err.Error()
 		}
-		RecordApiAccessHistoryV2(operator, moduleName, servcie, method, string(request), string(response), errorstring)
+		RecordApiAccessHistory(operator, moduleName, servcie, method, string(request), string(response), errorstring)
 	}()
 
 	logrus.WithFields(logrus.Fields{
@@ -46,7 +47,7 @@ func TraceRPCResponseV2(operator, moduleName, servcie, method string, err error,
 }
 
 // TraceHttpResponse Function
-func TraceHttpResponseV2(operator, moduleName, servcie, method string, err error, req, resp interface{}) {
+func TraceHttpResponse(operator, moduleName, servcie, method string, err error, req, resp interface{}) {
 	request, _ := json.Marshal(req)
 	response, _ := json.Marshal(resp)
 
@@ -55,7 +56,7 @@ func TraceHttpResponseV2(operator, moduleName, servcie, method string, err error
 		if err != nil {
 			errorstring = err.Error()
 		}
-		RecordApiAccessHistoryV2(operator, moduleName, servcie, method, string(request), string(response), errorstring)
+		RecordApiAccessHistory(operator, moduleName, servcie, method, string(request), string(response), errorstring)
 	}()
 
 	logrus.WithFields(logrus.Fields{
@@ -69,10 +70,10 @@ func TraceHttpResponseV2(operator, moduleName, servcie, method string, err error
 }
 
 // RecordApiAccessHistory function
-func RecordApiAccessHistoryV2(account, moduleName, serviceName, apiName, request, response, errorstring string) {
+func RecordApiAccessHistory(account, moduleName, serviceName, apiName, request, response, errorstring string) {
 	rd := &mysql.ApiAccessHistory{}
 
-	rd.Id = NewUUIdV4()
+	rd.Id = utils.NewUUIdV4()
 	rd.Account = account
 	rd.ServerName = ""
 	rd.ModuleName = moduleName
@@ -93,6 +94,6 @@ func RecordApiAccessHistoryV2(account, moduleName, serviceName, apiName, request
 
 	err := rd.Insert()
 	if err != nil {
-		errstring.MakeErrorDebug("RecordApiAccessHistoryV2", 1, err)
+		errstring.MakeErrorDebug("RecordApiAccessHistory", 1, err)
 	}
 }
