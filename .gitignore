@@ -17,3 +17,4 @@ log/*.log
 node_modules
 # Add any directories, files, or patterns you don't want to be tracked by version control
 dist
+vendor
