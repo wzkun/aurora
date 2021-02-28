@@ -567,6 +567,79 @@ func (model2 *CommonModel) WhereEqual(name string, values ...interface{}) *Commo
 	return model2
 }
 
+// WhereNotEqual 通用查询条件设置
+func (model2 *CommonModel) WhereNotEqual(name string, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, model.NotEqual, values2...)
+	return model2
+}
+
+// WhereGreaterThan 通用查询条件设置
+func (model2 *CommonModel) WhereGreaterThan(name string, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, model.GreaterThan, values2...)
+	return model2
+}
+
+// WhereGreaterThanOrEqual 通用查询条件设置
+func (model2 *CommonModel) WhereGreaterThanOrEqual(name string, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, model.GreaterThanOrEqual, values2...)
+	return model2
+}
+
+// WhereSmallerThan 通用查询条件设置
+func (model2 *CommonModel) WhereSmallerThan(name string, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, model.SmallerThan, values2...)
+	return model2
+}
+
+// WhereSmallerThanOrEqual 通用查询条件设置
+func (model2 *CommonModel) WhereSmallerThanOrEqual(name string, values ...interface{}) *CommonModel {
+	values2 := make([]interface{}, len(values))
+	for index, v := range values {
+		values2[index] = v
+	}
+
+	model2.Imp = model2.Imp.Where(name, model.SmallerThanOrEqual, values2...)
+	return model2
+}
+
+// WhereLeftLike 查询条件设置
+func (model2 *CommonModel) WhereLeftLike(name, value string) *CommonModel {
+	model2.Imp.DB = model2.GormDB().Where(fmt.Sprintf("%v like (?)", name), "%"+value)
+	return model2
+}
+
+// WhereRightLike 查询条件设置
+func (model2 *CommonModel) WhereRightLike(name, value string) *CommonModel {
+	model2.Imp.DB = model2.GormDB().Where(fmt.Sprintf("%v like (?)", name), value+"%")
+	return model2
+}
+
+// WhereLike 查询条件设置
+func (model2 *CommonModel) WhereLike(name, value string) *CommonModel {
+	model2.Imp.DB = model2.GormDB().Where(fmt.Sprintf("%v like (?)", name), "%"+value+"%")
+	return model2
+}
+
 // WherePublishRecordID 查询条件设置
 func (model2 *CommonModel) WherePublishRecordID(Predicate model.Predicate, values ...string) *CommonModel {
 	values2 := make([]interface{}, len(values))
@@ -620,24 +693,6 @@ func (model2 *CommonModel) WhereIsFinished(Predicate model.Predicate, values ...
 // WhereKind 查询条件设置
 func (model2 *CommonModel) WhereTitle(Predicate model.Predicate, value string) *CommonModel {
 	model2.Imp = model2.Imp.Where("`title`", Predicate, value)
-	return model2
-}
-
-// WhereLeftLike 查询条件设置
-func (model2 *CommonModel) WhereLeftLike(name, value string) *CommonModel {
-	model2.Imp.DB = model2.GormDB().Where(fmt.Sprintf("%v like (?)", name), "%"+value)
-	return model2
-}
-
-// WhereRightLike 查询条件设置
-func (model2 *CommonModel) WhereRightLike(name, value string) *CommonModel {
-	model2.Imp.DB = model2.GormDB().Where(fmt.Sprintf("%v like (?)", name), value+"%")
-	return model2
-}
-
-// WhereLike 查询条件设置
-func (model2 *CommonModel) WhereLike(name, value string) *CommonModel {
-	model2.Imp.DB = model2.GormDB().Where(fmt.Sprintf("%v like (?)", name), "%"+value+"%")
 	return model2
 }
 
