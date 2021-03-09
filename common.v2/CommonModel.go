@@ -305,7 +305,7 @@ func (model2 *CommonModel) Updates(tableName string, value interface{}) (err err
 
 // Get function
 func (model2 *CommonModel) Get(id string, value interface{}) error {
-	return model2.GormDB().Where("id = ?", id).Query(value).Error
+	return model2.GormDB().Where("id = ?", id).First(value).Error
 }
 
 // GetV2 function
