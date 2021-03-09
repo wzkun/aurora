@@ -1,3 +1,3 @@
-module code.aliyun.com/wzkun1990/aurora
+module github.com/wzkun/aurora
 
 go 1.15
